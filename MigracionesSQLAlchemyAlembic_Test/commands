@@ -1,0 +1,93 @@
+A continuación te muestro un ejemplo de una aplicación Flask que utiliza Alembic para aplicar cambios a la estructura de una base de datos PostgreSQL que fue creada con SQLAlchemy.
+
+1. Primero, asegúrate de tener Flask y Alembic instalados en tu entorno virtual de Python:
+
+```
+pip install Flask
+pip install Flask-Migrate==2.6.0
+pip install Flask-Script
+```
+
+2. Luego, crea un nuevo proyecto de Flask y una base de datos en PostgreSQL. Puedes utilizar el siguiente código como punto de partida:
+
+```python
+# app.py
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/mydatabase'
+db = SQLAlchemy(app)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50))
+
+@app.route('/')
+def index():
+    return 'Hello World!'
+
+if __name__ == '__main__':
+    app.run()
+
+```
+
+3. Ahora, crea un archivo llamado `manage.py` donde configuraremos las migraciones con Alembic:
+
+```python
+# manage.py
+from flask_script import Manager
+from flask_migrate import Migrate, MigrateCommand
+from app import app, db
+
+migrate = Migrate(app, db)
+manager = Manager(app)
+
+manager.add_command('db', MigrateCommand)
+
+if __name__ == '__main__':
+    manager.run()
+
+```
+
+4. Ejecuta el siguiente comando para inicializar Alembic y crear el archivo de configuración:
+
+```
+python manage.py db init
+```
+
+Esto creará un directorio llamado `migrations` donde se guardarán las migraciones.
+
+5. Crea una migración inicial con el siguiente comando:
+
+```
+python manage.py db migrate
+```
+
+Esto generará automáticamente un archivo de migración en el directorio `migrations/versions`.
+
+6. Aplica la migración a la base de datos con el siguiente comando:
+
+```
+python manage.py db upgrade
+```
+
+Esto ejecutará la migración y aplicará los cambios a la base de datos.
+
+7. Ahora puedes crear nuevas migraciones utilizando el siguiente comando:
+
+```
+python manage.py db migrate -m "descripción de los cambios"
+```
+
+Esto creará un nuevo archivo de migración en el directorio `migrations/versions` con los cambios especificados.
+
+8. Aplica las migraciones pendientes con el siguiente comando:
+
+```
+python manage.py db upgrade
+```
+
+Esto aplicará todas las migraciones pendientes a la base de datos.
+
+Con esto, tienes un proyecto de Flask que utiliza Alembic para aplicar cambios a la estructura de una base de datos PostgreSQL creada con SQLAlchemy. Puedes agregar o modificar modelos en el archivo `app.py`, crear nuevas migraciones y aplicarlas utilizando los comandos `python manage.py db migrate` y `python manage.py db upgrade`, respectivamente.

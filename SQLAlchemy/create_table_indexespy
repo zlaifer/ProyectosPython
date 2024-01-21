@@ -1,0 +1,33 @@
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'your_database_connection_url'
+db = SQLAlchemy(app)
+
+class User(db.Model):
+    __tablename__ = 'users'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50))
+
+class Post(db.Model):
+    __tablename__ = 'posts'
+
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100))
+    content = db.Column(db.Text)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+    # Define the relationship with the User model
+    user = db.relationship('User', backref='posts')
+
+    # Define multiple indexes on the title and content columns
+    __table_args__ = (
+        db.Index('idx_title', 'title'),
+        db.Index('idx_content', 'content'),
+    )
+
+
+# Create the tables in the database
+db.create_all()
