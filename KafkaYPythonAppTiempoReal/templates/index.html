@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización en Tiempo Real con Kafka</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+</head>
+<body>
+    <h1>Mensajes en Tiempo Real desde Kafka</h1>
+    <ul id="messages"></ul>
+
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        socket.on('mensaje', function(message) {
+            var messagesList = document.getElementById('messages');
+            var listItem = document.createElement('li');
+            listItem.appendChild(document.createTextNode(message));
+            messagesList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>

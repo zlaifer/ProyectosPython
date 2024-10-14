@@ -1,0 +1,643 @@
+<cus:Customizations xmlns:cus="http://www.bea.com/wli/config/customizations" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xt="http://www.bea.com/wli/config/xmltypes">
+	<cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+		<cus:description/>
+		<cus:owners>
+			<xt:owner>
+				<xt:type>BusinessService</xt:type>
+				<xt:path>CUS-customer/v2/soap/services/business/DB_OPENCARD_PR_CREA_CLIENTE_BS</xt:path>
+			</xt:owner>
+		</cus:owners>
+		<cus:actions>
+			<xt:replace>
+				<xt:envValueType>Service Operational Settings</xt:envValueType>
+				<xt:value>
+					<ops:operations enabled="true" xmlns:ser="http://xmlns.oracle.com/servicebus/business/config" xmlns:svc="http://www.bea.com/wli/sb/services" xmlns:ops="http://xmlns.oracle.com/servicebus/business/operations" xmlns:jca="http://www.bea.com/wli/sb/transports/jca" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports">
+						<ops:sla-alerting enabled="true"/>
+					</ops:operations>
+				</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Service URI Weight</xt:envValueType>
+				<xt:location>0</xt:location>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Service URI</xt:envValueType>
+				<xt:location>0</xt:location>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">jca://eis/DB/bank/OSB-trx_opencard_dbad</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Service URI Table</xt:envValueType>
+				<xt:value xsi:type="tran:URITableType" xmlns:tran="http://www.bea.com/wli/sb/transports">
+					<tran:tableElement>
+						<tran:URI>jca://eis/DB/bank/OSB-trx_opencard_dbad</tran:URI>
+						<tran:weight>0</tran:weight>
+					</tran:tableElement>
+				</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Service Retry Count</xt:envValueType>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Service Retry Iteration Interval</xt:envValueType>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">30</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>JCA Always Use WSDL Flag</xt:envValueType>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">true</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>JCA Connection Mode</xt:envValueType>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">managed</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>JCA Overwrite Connection Authentication Flag</xt:envValueType>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+			</xt:replace>
+		</cus:actions>
+	</cus:customization>
+	<cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+		<cus:description/>
+		<cus:owners>
+			<xt:owner>
+				<xt:type>BusinessService</xt:type>
+				<xt:path>CUS-customer/v2/soap/services/business/SOA_CustomerV2_BS</xt:path>
+			</xt:owner>
+		</cus:owners>
+		<cus:actions>
+			<xt:replace>
+				<xt:envValueType>Service Operational Settings</xt:envValueType>
+				<xt:value>
+					<oper:operations enabled="true" xmlns:ser="http://www.bea.com/wli/sb/services" xmlns:con="http://xmlns.oracle.com/servicebus/business/config" xmlns:http="http://www.bea.com/wli/sb/transports/http" xmlns:oper="http://xmlns.oracle.com/servicebus/business/operations" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports">
+						<oper:throttling enabled="false"/>
+						<oper:resultCachingEnabled>true</oper:resultCachingEnabled>
+					</oper:operations>
+				</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Service URI Weight</xt:envValueType>
+				<xt:location>0</xt:location>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Service URI</xt:envValueType>
+				<xt:location>0</xt:location>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">http://boinfbxsoaq:24130/soa-infra/services/customers/CUS-customerV2/customerv2bpel_client_ep</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Service URI Table</xt:envValueType>
+				<xt:value xsi:type="tran:URITableType" xmlns:tran="http://www.bea.com/wli/sb/transports">
+					<tran:tableElement>
+						<tran:URI>http://boinfbxsoaq:24130/soa-infra/services/customers/CUS-customerV2/customerv2bpel_client_ep</tran:URI>
+						<tran:weight>0</tran:weight>
+					</tran:tableElement>
+				</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Service Retry Count</xt:envValueType>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Service Retry Iteration Interval</xt:envValueType>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">30</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Work Manager</xt:envValueType>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">WMRS_Customer</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Read Timeout for HTTP Outbound Transport Provider</xt:envValueType>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">20</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Connection Timeout for HTTP Outbound Transport Provider</xt:envValueType>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">2</xt:value>
+			</xt:replace>
+		</cus:actions>
+	</cus:customization>
+	<cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+		<cus:description/>
+		<cus:owners>
+			<xt:owner>
+				<xt:type>BusinessService</xt:type>
+				<xt:path>CUS-customer/v2/soap/services/business/SOA_CustomerV2_T3_BS</xt:path>
+			</xt:owner>
+		</cus:owners>
+		<cus:actions>
+			<xt:replace>
+				<xt:envValueType>Service Operational Settings</xt:envValueType>
+				<xt:value>
+					<oper:operations enabled="true" xmlns:ser="http://www.bea.com/wli/sb/services" xmlns:con="http://xmlns.oracle.com/servicebus/business/config" xmlns:soa="http://www.bea.com/wli/sb/transports/soa" xmlns:oper="http://xmlns.oracle.com/servicebus/business/operations" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports">
+						<oper:throttling enabled="false"/>
+						<oper:resultCachingEnabled>true</oper:resultCachingEnabled>
+					</oper:operations>
+				</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Service URI Weight</xt:envValueType>
+				<xt:location>0</xt:location>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Service URI</xt:envValueType>
+				<xt:location>0</xt:location>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">t3://wlqsoa1221server1:24130,wlqsoa1221server2:24130/customers/CUS-customerV2/customerv2bpel_client_ep_t3</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Service URI Table</xt:envValueType>
+				<xt:value xsi:type="tran:URITableType" xmlns:tran="http://www.bea.com/wli/sb/transports">
+					<tran:tableElement>
+						<tran:URI>t3://wlqsoa1221server1:24130,wlqsoa1221server2:24130/customers/CUS-customerV2/customerv2bpel_client_ep_t3</tran:URI>
+						<tran:weight>0</tran:weight>
+					</tran:tableElement>
+				</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Service Retry Count</xt:envValueType>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Service Retry Iteration Interval</xt:envValueType>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">30</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Work Manager</xt:envValueType>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">WMRS_Customer</xt:value>
+			</xt:replace>
+		</cus:actions>
+	</cus:customization>
+	<cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+		<cus:description/>
+		<cus:owners>
+			<xt:owner>
+				<xt:type>ProxyService</xt:type>
+				<xt:path>CUS-customer/v2/soap/services/proxies/CustomerPS</xt:path>
+			</xt:owner>
+		</cus:owners>
+		<cus:actions>
+			<xt:replace>
+				<xt:envValueType>Service URI</xt:envValueType>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/services/customer/customer/v2</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>Service Operational Settings</xt:envValueType>
+				<xt:value>
+					<oper:operations enabled="true" xmlns:ser="http://www.bea.com/wli/sb/services" xmlns:con="http://www.bea.com/wli/sb/services/security/config" xmlns:oper="http://xmlns.oracle.com/servicebus/proxy/operations" xmlns:env="http://www.bea.com/wli/config/env" xmlns:tran="http://www.bea.com/wli/sb/transports"/>
+				</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>UDDI Auto Publish</xt:envValueType>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+			</xt:replace>
+		</cus:actions>
+	</cus:customization>
+	<cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+		<cus:description/>
+		<cus:owners>
+			<xt:owner>
+				<xt:type>ProxyService</xt:type>
+				<xt:path>CUS-customer/v2/soap/services/proxies/CustomerPSLocal</xt:path>
+			</xt:owner>
+		</cus:owners>
+		<cus:actions>
+			<xt:replace>
+				<xt:envValueType>Service Operational Settings</xt:envValueType>
+				<xt:value>
+					<oper:operations enabled="true" xmlns:ser="http://www.bea.com/wli/sb/services" xmlns:con="http://www.bea.com/wli/sb/services/security/config" xmlns:oper="http://xmlns.oracle.com/servicebus/proxy/operations" xmlns:tran="http://www.bea.com/wli/sb/transports"/>
+				</xt:value>
+			</xt:replace>
+			<xt:replace>
+				<xt:envValueType>UDDI Auto Publish</xt:envValueType>
+				<xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">false</xt:value>
+			</xt:replace>
+		</cus:actions>
+	</cus:customization>
+	<cus:customization xsi:type="cus:FindAndReplaceCustomizationType">
+		<cus:description/>
+		<cus:query>
+			<xt:resourceTypes>BusinessService</xt:resourceTypes>
+			<xt:resourceTypes>ProxyService</xt:resourceTypes>
+			<xt:envValueTypes>Connection Timeout for HTTP Outbound Transport Provider</xt:envValueTypes>
+			<xt:envValueTypes>JCA Always Use WSDL Flag</xt:envValueTypes>
+			<xt:envValueTypes>JCA Connection Mode</xt:envValueTypes>
+			<xt:envValueTypes>JCA Overwrite Connection Authentication Flag</xt:envValueTypes>
+			<xt:envValueTypes>Read Timeout for HTTP Outbound Transport Provider</xt:envValueTypes>
+			<xt:envValueTypes>Service Retry Count</xt:envValueTypes>
+			<xt:envValueTypes>Service Retry Iteration Interval</xt:envValueTypes>
+			<xt:envValueTypes>Service URI</xt:envValueTypes>
+			<xt:envValueTypes>Service URI Weight</xt:envValueTypes>
+			<xt:envValueTypes>UDDI Auto Publish</xt:envValueTypes>
+			<xt:envValueTypes>Work Manager</xt:envValueTypes>
+			<xt:refsToSearch xsi:type="xt:ResourceRefType">
+				<xt:type>BusinessService</xt:type>
+				<xt:path>CUS-customer/v2/soap/services/business/DB_OPENCARD_PR_CREA_CLIENTE_BS</xt:path>
+			</xt:refsToSearch>
+			<xt:refsToSearch xsi:type="xt:ResourceRefType">
+				<xt:type>BusinessService</xt:type>
+				<xt:path>CUS-customer/v2/soap/services/business/SOA_CustomerV2_BS</xt:path>
+			</xt:refsToSearch>
+			<xt:refsToSearch xsi:type="xt:ResourceRefType">
+				<xt:type>BusinessService</xt:type>
+				<xt:path>CUS-customer/v2/soap/services/business/SOA_CustomerV2_T3_BS</xt:path>
+			</xt:refsToSearch>
+			<xt:refsToSearch xsi:type="xt:ResourceRefType">
+				<xt:type>ProxyService</xt:type>
+				<xt:path>CUS-customer/v2/soap/services/proxies/CustomerPS</xt:path>
+			</xt:refsToSearch>
+			<xt:refsToSearch xsi:type="xt:ResourceRefType">
+				<xt:type>ProxyService</xt:type>
+				<xt:path>CUS-customer/v2/soap/services/proxies/CustomerPSLocal</xt:path>
+			</xt:refsToSearch>
+			<xt:includeOnlyModifiedResources>false</xt:includeOnlyModifiedResources>
+			<xt:searchString>Search String</xt:searchString>
+			<xt:isCompleteMatch>false</xt:isCompleteMatch>
+		</cus:query>
+		<cus:replacement>Replacement String</cus:replacement>
+	</cus:customization>
+	<cus:customization xsi:type="cus:ReferenceCustomizationType">
+		<cus:description/>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>JCA</xt:type>
+			<xt:path>CUS-customer/v2/soap/adapters/database/DB_OPENCARD_PR_CREA_CLIENTE_JCA</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>XMLSchema</xt:type>
+			<xt:path>CUS-customer/v2/soap/interfaces/schemas/Customer</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>WSDL</xt:type>
+			<xt:path>CUS-customer/v2/soap/interfaces/wsdl/Customer</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>WSDL</xt:type>
+			<xt:path>CUS-customer/v2/soap/interfaces/wsdl/Customer_soap</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>WSDL</xt:type>
+			<xt:path>CUS-customer/v2/soap/interfaces/wsdl/DB_OPENCARD_PR_CREA_CLIENTE</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>WSDL</xt:type>
+			<xt:path>CUS-customer/v2/soap/interfaces/wsdl/DB_OPENCARD_PR_CREA_CLIENTE_db</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>BusinessService</xt:type>
+			<xt:path>CUS-customer/v2/soap/services/business/DB_OPENCARD_PR_CREA_CLIENTE_BS</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>BusinessService</xt:type>
+			<xt:path>CUS-customer/v2/soap/services/business/SOA_CustomerV2_BS</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>BusinessService</xt:type>
+			<xt:path>CUS-customer/v2/soap/services/business/SOA_CustomerV2_T3_BS</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Pipeline</xt:type>
+			<xt:path>CUS-customer/v2/soap/services/pipelines/CustomerPP</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>ProxyService</xt:type>
+			<xt:path>CUS-customer/v2/soap/services/proxies/CustomerPS</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>ProxyService</xt:type>
+			<xt:path>CUS-customer/v2/soap/services/proxies/CustomerPSLocal</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/addCustomer/addCustomerFault</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/addCustomer/addCustomerLogRq</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/addCustomer/addCustomerLogRs</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/addCustomerBlock/addCustomerBlockFault</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/addCustomerBlock/addCustomerBlockLogRq</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/addCustomerBlock/addCustomerBlockLogRs</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/addCustomerBlock/addCustomerBlockRq</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/addCustomerBlock/addCustomerBlockRs</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/canCustomerBlock/canCustomerBlockFault</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/canCustomerBlock/canCustomerBlockLogRq</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/canCustomerBlock/canCustomerBlockLogRs</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/canCustomerBlock/canCustomerBlockRq</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/canCustomerBlock/canCustomerBlockRs</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/modCustomer/modCustomerFault</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/modCustomer/modCustomerLogRq</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/modCustomer/modCustomerLogRs</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/modCustomerContactList/modCustomerContactListFault</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/modCustomerContactList/modCustomerContactListLogRq</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/modCustomerContactList/modCustomerContactListLogRs</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/modCustomerContactList/modCustomerContactListRq</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:refsToBeConsidered xsi:type="xt:ResourceRefType">
+			<xt:type>Xquery</xt:type>
+			<xt:path>CUS-customer/v2/soap/transform/xquery/modCustomerContactList/modCustomerContactListRs</xt:path>
+		</cus:refsToBeConsidered>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>common/Auditory/interfaces/schemas/Auditory</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>common/Auditory/interfaces/schemas/Auditory</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>PipelineTemplate</xt:type>
+				<xt:path>common/templates/services/templates/TemplateTargetQry2</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>PipelineTemplate</xt:type>
+				<xt:path>common/templates/services/templates/TemplateTargetQry2</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>JCA</xt:type>
+				<xt:path>CUS-customer/v2/soap/adapters/database/DB_OPENCARD_PR_CREA_CLIENTE_JCA</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>JCA</xt:type>
+				<xt:path>CUS-customer/v2/soap/adapters/database/DB_OPENCARD_PR_CREA_CLIENTE_JCA</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CUS-customer/v2/soap/interfaces/schemas/Customer</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CUS-customer/v2/soap/interfaces/schemas/Customer</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CUS-customer/v2/soap/interfaces/schemas/DB_OPENCARD_PR_CREA_CLIENTE</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CUS-customer/v2/soap/interfaces/schemas/DB_OPENCARD_PR_CREA_CLIENTE</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>WSDL</xt:type>
+				<xt:path>CUS-customer/v2/soap/interfaces/wsdl/Customer</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>WSDL</xt:type>
+				<xt:path>CUS-customer/v2/soap/interfaces/wsdl/Customer</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>WSDL</xt:type>
+				<xt:path>CUS-customer/v2/soap/interfaces/wsdl/Customer_soap</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>WSDL</xt:type>
+				<xt:path>CUS-customer/v2/soap/interfaces/wsdl/Customer_soap</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>WSDL</xt:type>
+				<xt:path>CUS-customer/v2/soap/interfaces/wsdl/DB_OPENCARD_PR_CREA_CLIENTE</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>WSDL</xt:type>
+				<xt:path>CUS-customer/v2/soap/interfaces/wsdl/DB_OPENCARD_PR_CREA_CLIENTE</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>WSDL</xt:type>
+				<xt:path>CUS-customer/v2/soap/interfaces/wsdl/DB_OPENCARD_PR_CREA_CLIENTE_db</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>WSDL</xt:type>
+				<xt:path>CUS-customer/v2/soap/interfaces/wsdl/DB_OPENCARD_PR_CREA_CLIENTE_db</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>Pipeline</xt:type>
+				<xt:path>CUS-customer/v2/soap/services/pipelines/CustomerPP</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>Pipeline</xt:type>
+				<xt:path>CUS-customer/v2/soap/services/pipelines/CustomerPP</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>Xquery</xt:type>
+				<xt:path>CUS-customer/v2/soap/transform/xquery/GetTargetRouting2</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>Xquery</xt:type>
+				<xt:path>CUS-customer/v2/soap/transform/xquery/GetTargetRouting2</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/aggregates/ContactList_Type</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/aggregates/ContactList_Type</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/aggregates/IssuedIdent_Type</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/aggregates/IssuedIdent_Type</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/aggregates/PartyKey_Type</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/aggregates/PartyKey_Type</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/aggregates/PartyStatus_Type</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/aggregates/PartyStatus_Type</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/headers/HeaderRequest_Type</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/headers/HeaderRequest_Type</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/headers/HeaderResponse_Type</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/headers/HeaderResponse_Type</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/objects/Party_Type</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/objects/Party_Type</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/types/Banking_Type</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/types/Banking_Type</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/types/Boolean_Type</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/types/Boolean_Type</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/types/OpenEnum_Type</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/types/OpenEnum_Type</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/types/OriginatingBranch_Type</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>CommonCanonical/v3/interfaces/schemas/types/OriginatingBranch_Type</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>customer/Customer/v1/interfaces/schemas/DB_Phoenix_Usp_SrvEAI_BloqClien</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>customer/Customer/v1/interfaces/schemas/DB_Phoenix_Usp_SrvEAI_BloqClien</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>customer/Customer/v1/interfaces/schemas/direccionesPhoenix_sp</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>XMLSchema</xt:type>
+				<xt:path>customer/Customer/v1/interfaces/schemas/direccionesPhoenix_sp</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+		<cus:externalReferenceMap>
+			<xt:oldRef>
+				<xt:type>WSDL</xt:type>
+				<xt:path>customer/Customer/v1/interfaces/wsdl/Customer_soap</xt:path>
+			</xt:oldRef>
+			<xt:newRef>
+				<xt:type>WSDL</xt:type>
+				<xt:path>customer/Customer/v1/interfaces/wsdl/Customer_soap</xt:path>
+			</xt:newRef>
+		</cus:externalReferenceMap>
+	</cus:customization>
+</cus:Customizations>

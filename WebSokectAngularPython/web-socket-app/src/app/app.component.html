@@ -1,0 +1,6 @@
+<div>
+  <h1>WebSocket Angular App</h1>
+  <input [(ngModel)]="message" placeholder="Enter message" />
+  <button (click)="sendMessage()">Send</button>
+  <div *ngFor="let msg of messages">{{ msg }}</div>
+</div>

@@ -1,0 +1,13 @@
+<BusinessServices xmlns:ns0="http://www.bea.com/wli/config/xmltypes"><ns0:owner>
+				<ns0:type>BusinessService</ns0:type>
+				<ns0:path>CUS-customer/v2/soap/services/business/DB_OPENCARD_PR_CREA_CLIENTE_BS</ns0:path>
+			</ns0:owner>
+		<ns0:owner>
+				<ns0:type>BusinessService</ns0:type>
+				<ns0:path>CUS-customer/v2/soap/services/business/SOA_CustomerV2_BS</ns0:path>
+			</ns0:owner>
+		<ns0:owner>
+				<ns0:type>BusinessService</ns0:type>
+				<ns0:path>CUS-customer/v2/soap/services/business/SOA_CustomerV2_T3_BS</ns0:path>
+			</ns0:owner>
+		</BusinessServices>

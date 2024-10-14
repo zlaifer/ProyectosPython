@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='utf-8'?>
+<cus:Customizations xmlns:ns0="http://www.bea.com/wli/config/customizations" xmlns:ns1="http://www.bea.com/wli/config/xmltypes" xmlns:ns2="http://xmlns.oracle.com/servicebus/business/operations" xmlns:ns4="http://www.bea.com/wli/sb/transports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cus="http://www.bea.com/wli/config/customizations" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xt="http://www.bea.com/wli/config/xmltypes">
+	<cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+		<ns0:description/>
+		<ns0:owners>
+			<ns1:owner>
+				<ns1:type>BusinessService</ns1:type>
+				<ns1:path>CUS-customer/v2/soap/services/business/DB_OPENCARD_PR_CREA_CLIENTE_BS</ns1:path>
+			</ns1:owner>
+		</ns0:owners>
+		<ns0:actions>
+			<ns1:replace>
+				<ns1:envValueType>Service Operational Settings</ns1:envValueType>
+				<ns1:value>
+					<ns2:operations enabled="true">
+						<ns2:sla-alerting enabled="true"/>
+					</ns2:operations>
+				</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Service URI Weight</ns1:envValueType>
+				<ns1:location>0</ns1:location>
+				<ns1:value xsi:type="xs:string">0</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Service URI</ns1:envValueType>
+				<ns1:location>0</ns1:location>
+				<ns1:value xsi:type="xs:string">jca://eis/DB/bank/OSB-trx_opencard_dbad</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Service URI Table</ns1:envValueType>
+				<ns1:value xsi:type="tran:URITableType">
+					<ns4:tableElement>
+						<ns4:URI>jca://eis/DB/bank/OSB-trx_opencard_dbad</ns4:URI>
+						<ns4:weight>0</ns4:weight>
+					</ns4:tableElement>
+				</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Service Retry Count</ns1:envValueType>
+				<ns1:value xsi:type="xs:string">0</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Service Retry Iteration Interval</ns1:envValueType>
+				<ns1:value xsi:type="xs:string">30</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>JCA Always Use WSDL Flag</ns1:envValueType>
+				<ns1:value xsi:type="xs:string">true</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>JCA Connection Mode</ns1:envValueType>
+				<ns1:value xsi:type="xs:string">managed</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>JCA Overwrite Connection Authentication Flag</ns1:envValueType>
+				<ns1:value xsi:type="xs:string">false</ns1:value>
+			</ns1:replace>
+		</ns0:actions>
+	</cus:customization>
+	<cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+		<ns0:description/>
+		<ns0:owners>
+			<ns1:owner>
+				<ns1:type>BusinessService</ns1:type>
+				<ns1:path>CUS-customer/v2/soap/services/business/SOA_CustomerV2_BS</ns1:path>
+			</ns1:owner>
+		</ns0:owners>
+		<ns0:actions>
+			<ns1:replace>
+				<ns1:envValueType>Service Operational Settings</ns1:envValueType>
+				<ns1:value>
+					<ns2:operations enabled="true">
+						<ns2:throttling enabled="false"/>
+						<ns2:resultCachingEnabled>true</ns2:resultCachingEnabled>
+					</ns2:operations>
+				</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Service URI Weight</ns1:envValueType>
+				<ns1:location>0</ns1:location>
+				<ns1:value xsi:type="xs:string">0</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Service URI</ns1:envValueType>
+				<ns1:location>0</ns1:location>
+				<ns1:value xsi:type="xs:string">http://boinfbxsoaq:24130/soa-infra/services/customers/CUS-customerV2/customerv2bpel_client_ep</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Service URI Table</ns1:envValueType>
+				<ns1:value xsi:type="tran:URITableType">
+					<ns4:tableElement>
+						<ns4:URI>http://boinfbxsoaq:24130/soa-infra/services/customers/CUS-customerV2/customerv2bpel_client_ep</ns4:URI>
+						<ns4:weight>0</ns4:weight>
+					</ns4:tableElement>
+				</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Service Retry Count</ns1:envValueType>
+				<ns1:value xsi:type="xs:string">0</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Service Retry Iteration Interval</ns1:envValueType>
+				<ns1:value xsi:type="xs:string">30</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Work Manager</ns1:envValueType>
+				<ns1:value xsi:type="xs:string">WMRS_Customer</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Read Timeout for HTTP Outbound Transport Provider</ns1:envValueType>
+				<ns1:value xsi:type="xs:string">20</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Connection Timeout for HTTP Outbound Transport Provider</ns1:envValueType>
+				<ns1:value xsi:type="xs:string">2</ns1:value>
+			</ns1:replace>
+		</ns0:actions>
+	</cus:customization>
+	<cus:customization xsi:type="cus:EnvValueActionsCustomizationType">
+		<ns0:description/>
+		<ns0:owners>
+			<ns1:owner>
+				<ns1:type>BusinessService</ns1:type>
+				<ns1:path>CUS-customer/v2/soap/services/business/SOA_CustomerV2_T3_BS</ns1:path>
+			</ns1:owner>
+		</ns0:owners>
+		<ns0:actions>
+			<ns1:replace>
+				<ns1:envValueType>Service Operational Settings</ns1:envValueType>
+				<ns1:value>
+					<ns2:operations enabled="true">
+						<ns2:throttling enabled="false"/>
+						<ns2:resultCachingEnabled>true</ns2:resultCachingEnabled>
+					</ns2:operations>
+				</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Service URI Weight</ns1:envValueType>
+				<ns1:location>0</ns1:location>
+				<ns1:value xsi:type="xs:string">0</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Service URI</ns1:envValueType>
+				<ns1:location>0</ns1:location>
+				<ns1:value xsi:type="xs:string">t3://wlqsoa1221server1:24130,wlqsoa1221server2:24130/customers/CUS-customerV2/customerv2bpel_client_ep_t3</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Service URI Table</ns1:envValueType>
+				<ns1:value xsi:type="tran:URITableType">
+					<ns4:tableElement>
+						<ns4:URI>t3://wlqsoa1221server1:24130,wlqsoa1221server2:24130/customers/CUS-customerV2/customerv2bpel_client_ep_t3</ns4:URI>
+						<ns4:weight>0</ns4:weight>
+					</ns4:tableElement>
+				</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Service Retry Count</ns1:envValueType>
+				<ns1:value xsi:type="xs:string">0</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Service Retry Iteration Interval</ns1:envValueType>
+				<ns1:value xsi:type="xs:string">30</ns1:value>
+			</ns1:replace>
+			<ns1:replace>
+				<ns1:envValueType>Work Manager</ns1:envValueType>
+				<ns1:value xsi:type="xs:string">WMRS_Customer</ns1:value>
+			</ns1:replace>
+		</ns0:actions>
+	</cus:customization>
+</cus:Customizations>
